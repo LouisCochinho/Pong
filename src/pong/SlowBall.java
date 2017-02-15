@@ -11,6 +11,8 @@ public class SlowBall extends Neutral {
 		this.bonusImage = new Image("res/slowball.png");
 	}
 	
+
+	
 	@Override
 	public void setImage() throws SlickException {
 		this.bonusImage = new Image("res/slowballUsed.png");

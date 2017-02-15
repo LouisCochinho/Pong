@@ -10,6 +10,7 @@ public class SmallRectangle extends Malus{
 		// TODO Auto-generated constructor stub
 		this.bonusImage = new Image("res/smallRectangle.png");
 	}
+	
 
 	@Override
 	public void setImage() throws SlickException {

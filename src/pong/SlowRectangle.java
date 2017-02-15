@@ -8,13 +8,13 @@ public class SlowRectangle extends Malus {
 	public SlowRectangle(int posX, int posY) throws SlickException {
 		super(posX, posY);
 		// TODO Auto-generated constructor stub
-		this.bonusImage = new Image("res/slowball.png");
+		this.bonusImage = new Image("res/slowRectangle.png");
 	}
-
+	
 	@Override
 	public void setImage() throws SlickException {
 		// TODO Auto-generated method stub
-		this.bonusImage = new Image("res/slowballUsed.png");
+		this.bonusImage = new Image("res/slowRectangleUsed.png");
 	}
 
 	@Override

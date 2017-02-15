@@ -10,8 +10,7 @@ import org.newdawn.slick.SlickException;
 
 public class Inventory {
 
-	// Faire classe MyImage
-	private static int AVAILABLE_BONUS_SIZE = 3;
+	private int maxInventorySize;
 	private Image inventoryImage;
 	private int posX;
 	private int posY;
@@ -34,8 +33,10 @@ public class Inventory {
 	public Inventory(int posX, int posY) throws SlickException{
 		this.posX = posX;
 		this.posY = posY;
-		availableObjects = new ArrayList<MyObject>(AVAILABLE_BONUS_SIZE);
+		this.maxInventorySize = 3;
+		availableObjects = new ArrayList<MyObject>(maxInventorySize);
 		this.inventoryImage = new Image("res/inventory.png");	
+		
 	}
 
 	public void display(Graphics g) {
@@ -44,7 +45,7 @@ public class Inventory {
 	}
 	
 	public void addObject(MyObject b, int playerNumber){
-		if(this.availableObjects.size()<AVAILABLE_BONUS_SIZE){			
+		if(!isInventoryFull()){			
 			b.setInputKey(Util.assignInputKey(playerNumber, this.availableObjects.size()));			
 			this.availableObjects.add(b);
 		}
@@ -53,6 +54,22 @@ public class Inventory {
 	public void removeObject(MyObject b){
 		this.availableObjects.remove(b);
 		
+	}
+	
+	public boolean isInventoryFull(){
+		return availableObjects.size() >= maxInventorySize;
+	}
+	
+	public int getNextAvailablePlace(){
+		if(!isInventoryFull()){
+			return this.availableObjects.size()+1;
+		}else{
+			return 0;
+		}
+	}
+	
+	public int getMaxInventorySize(){
+		return this.maxInventorySize;
 	}
 }
 

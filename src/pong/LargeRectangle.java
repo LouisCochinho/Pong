@@ -10,6 +10,8 @@ public class LargeRectangle extends Bonus{
 		// TODO Auto-generated constructor stub
 		this.bonusImage = new Image("res/largeRectangle.png");
 	}
+	
+
 
 	@Override
 	public void setImage() throws SlickException {

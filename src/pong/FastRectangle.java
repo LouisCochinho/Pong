@@ -5,17 +5,16 @@ import org.newdawn.slick.SlickException;
 
 public class FastRectangle extends Bonus{
 
-	// Augmente la vitesse de déplacement du rectangle
+	// Augmente la vitesse de dï¿½placement du rectangle
 	public FastRectangle(int posX, int posY) throws SlickException {
 		super(posX, posY);
 		// TODO Auto-generated constructor stub
-		this.bonusImage = new Image("res/fastball.png");
+		this.bonusImage = new Image("res/fastRectangle.png");
 	}
-
 	@Override
 	public void setImage() throws SlickException {
 		// TODO Auto-generated method stub
-		this.bonusImage = new Image("res/fastballUsed.png");
+		this.bonusImage = new Image("res/fastRectangleUsed.png");
 	}
 
 	@Override

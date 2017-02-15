@@ -6,4 +6,5 @@ public abstract class Bonus extends MyObject<Player>{
 		super(posX, posY);
 		// TODO Auto-generated constructor stub
 	}
+
 }

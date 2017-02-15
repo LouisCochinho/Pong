@@ -11,14 +11,14 @@ public abstract class MyObject<T> implements Action<T> {
 	private int posY;
 	private boolean activated = false;
 	private int activationTime = 10; // secondes
-	private int inputKey; // Touches à presser
+	private int inputKey; // Touches ï¿½ presser
 	
 
 	public MyObject(int posX, int posY){
 		this.posX = posX;
 		this.posY = posY;
 	}
-	
+
 	public void display(Graphics g) {
 		  g.resetTransform();
 		  g.drawImage(this.bonusImage, this.posX, this.posY);
@@ -46,7 +46,7 @@ public abstract class MyObject<T> implements Action<T> {
 		try {
 			setImage();
 		} catch (SlickException e) {
-			System.err.println("L'image n'a pas pu être chargée");
+			System.err.println("L'image n'a pas pu ï¿½tre chargï¿½e");
 		}
 	}
 	
@@ -67,5 +67,13 @@ public abstract class MyObject<T> implements Action<T> {
 	
 	protected void setActivation(boolean activated){
 		this.activated = activated;
+	}
+	
+	public void setPosX(int posX){
+		this.posX = posX;
+	}
+	
+	public void setPosY(int posY){
+		this.posY = posY;
 	}
 }

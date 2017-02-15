@@ -11,6 +11,7 @@ public class Player {
 		this.score = score;
 		this.inventory = inventory;
 		this.number = number;
+		initObjects();
 	}
 
 	public Rectangle getRectangle() {
@@ -51,5 +52,20 @@ public class Player {
 	
 	public void setRectangleSize(int size){
 		this.rectangle.setHeight(size);
+	}
+	
+	public boolean isInventoryFull(){
+		return this.inventory.isInventoryFull();
+	}
+	
+	public int getNextAvailablePlaceInInventory(){
+		return this.inventory.getNextAvailablePlace();
+	}
+	
+	private void initObjects(){
+		for(int i = 0 ; i< this.inventory.getMaxInventorySize();i++){
+			MyObject obj = Util.getRandomObject(this.number,i);
+			this.inventory.addObject(obj, this.number);
+		}
 	}
 }
