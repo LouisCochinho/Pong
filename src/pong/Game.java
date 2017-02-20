@@ -1,6 +1,8 @@
 package pong;
 
 
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GLContext;
 import org.newdawn.slick.BasicGame;
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
@@ -145,10 +147,17 @@ public class Game extends BasicGame{
 						b.decrement();
 						cpt = 10;
 					}
+					if(!player1.isInventoryFull()){
+						System.out.println(player1.getNextAvailablePlaceInInventory());
+					}
 					// MARCHE PAS
-					if(cpt==0){
-						if(!player1.isInventoryFull()){				
-							player1.addObject(Util.getRandomObject(player1.getNumber(), player1.getNextAvailablePlaceInInventory()));
+					if(cpt==0){						
+						if(!player1.isInventoryFull()){	
+							int np = player1.getNextAvailablePlaceInInventory();
+							MyObject b = Util.getRandomObject(player1.getNumber(), np);
+							System.out.println("np = "+np);
+							System.out.println("object : "+b.getInputKey());
+							player1.addObject(b);
 						}
 						if(!player2.isInventoryFull()){
 							player2.addObject(Util.getRandomObject(player2.getNumber(), player2.getNextAvailablePlaceInInventory()));

@@ -49,7 +49,8 @@ public class Util {
 				default: break;
 			}
 		}catch(Exception e){
-			System.err.println("Erreur lors de la crÃ©ation d'un bonus.");
+			System.err.println("Erreur lors de la création d'un bonus : ");
+			e.printStackTrace();
 		}		
 		return returnedObject;
 	}

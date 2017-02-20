@@ -65,7 +65,7 @@ public class Player {
 	private void initObjects(){
 		for(int i = 0 ; i< this.inventory.getMaxInventorySize();i++){
 			MyObject obj = Util.getRandomObject(this.number,i);
-			this.inventory.addObject(obj, this.number);
+			addObject(obj);
 		}
 	}
 }
